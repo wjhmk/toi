@@ -1,7 +1,7 @@
 <%= form_with model: @question do |form| %>
-  <%= form.text_field :question_image %><br>
-  <%= form.text_field :answer %><br>
-  <%= form.text_field :column %><br>
-  <%= form.text_field :hint %><br>
+  <p>質問内容画像:<%= form.text_field :question_image %></p>
+  <p>答え（数字）:<%= form.select :answer , [[1, 1], [2, 2],[3, 3], [4, 4]] %></p>
+  <p>コラム:<%= form.text_field :column %></p>
+  <p>ヒント:<%= form.text_field :hint %></p>
   <%= form.submit %>
 <% end %>

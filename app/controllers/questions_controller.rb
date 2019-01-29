@@ -21,6 +21,6 @@ class QuestionsController < ApplicationController
 
     private
           def question_params
-            params.require(:question).permit(:question_image, :answer, :column, :hint, )
+            params.require(:question).permit(:question_image, :answer, :column, :hint)
           end
 end
