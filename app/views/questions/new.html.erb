@@ -3,5 +3,7 @@
   <p>答え（数字）:<%= form.select :answer , [[1, 1], [2, 2],[3, 3], [4, 4]] %></p>
   <p>コラム:<%= form.text_field :column %></p>
   <p>ヒント:<%= form.text_field :hint %></p>
+  <p>レベル:<%= form.select :level , [[1, 1], [2, 2],[3, 3]] %></p>
+  <p>カテゴリー:<%= form.select :category , [["弧度法と度数法", 1], ["加法定理", 2],["相互関係", 3], ["2倍角の公式", 4], ["合成", 5]] %></p>
   <%= form.submit %>
 <% end %>

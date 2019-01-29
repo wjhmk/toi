@@ -1,5 +1,7 @@
 <%= @question.id %><br>
-<%= image_tag @question.question_image.url %><br>
-<%= @question.answer %><br>
-<%= @question.column %><br>
-<%= @question.hint %><br>
+<p>質問内容画像:<%= image_tag @question.question_image.url %></p>
+<p>答え（数字）:<%= @question.answer %></p>
+<p>コラム:<%= @question.column %></p>
+<p>ヒント:<%= @question.hint %></p>
+<p>レベル:<%= @question.level %></p>
+<p>カテゴリー:<%= @question.category %></p>
