@@ -1,0 +1,7 @@
+<%= form_with model: @question do |form| %>
+  <%= form.text_field :question_image %><br>
+  <%= form.text_field :answer %><br>
+  <%= form.text_field :column %><br>
+  <%= form.text_field :hint %><br>
+  <%= form.submit %>
+<% end %>

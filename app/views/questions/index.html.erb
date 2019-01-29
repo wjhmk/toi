@@ -1,0 +1,7 @@
+<% @questions.each do |question| %>
+    <p>---------------------------------</p>
+    <%= question.id %><br>
+    <%= question.answer %><br>
+    <%= question.column %><br>
+    <%= question.hint %><br>
+<% end %>
