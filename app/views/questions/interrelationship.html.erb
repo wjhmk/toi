@@ -1,10 +1,2 @@
-<% @questions.each do |question| %>
-    <p>---------------------------------</p>
-    <p>id:<%= question.id %></p>
-    <p>質問内容画像:<%= image_tag question.question_image.url %></p>
-    <p>答え（数字）:<%= question.answer %></p>
-    <p>コラム:<%= question.column %></p>
-    <p>ヒント:<%= question.hint %></p>
-    <p>レベル:<%= question.level %></p>
-    <p>カテゴリー:<%= question.category %></p>
-<% end %>
+<h1>カテゴリ別：相互関係</h1>
+<%= render partial: "content" %>

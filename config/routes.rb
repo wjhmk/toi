@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :questions
 
+  get 'link', to: 'home#link'
   get 'level1', to: 'questions#level1'
   get 'level2', to: 'questions#level2'
   get 'level3', to: 'questions#level3'

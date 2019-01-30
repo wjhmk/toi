@@ -1,0 +1,85 @@
+<a href="../html/home.html">問題選択画面へ戻る</a>
+<% @questions.each_with_index do |question, i| %>
+    <div id = "classification<%= question.id %>">
+        <p>-----<%= i + 1%>問目-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <p><%= image_tag(question.question_image.url, :size => "600x400") %></p>
+        <p>コラム:<%= question.column %></p>
+        <p>ヒント:<%= question.hint %></p>
+        <p>レベル:<%= question.level %></p>
+
+        <% case question.category %>
+        <% when 1%>
+        <p>カテゴリー:弧度法と度数法</p>
+        <% when 2 %>
+        <p>カテゴリー:加法定理</p>
+        <% when 3 %>
+        <p>カテゴリー:相互関係</p>
+        <% when 4 %>
+        <p>カテゴリー:二倍角の公式</p>
+        <% when 5 %>
+        <p>カテゴリー:合成</p>
+        <% end %>
+
+
+
+        <div>
+            <select id="area<%= question.id %>" name="area<%= question.id %>">
+              <option value="0">答えを入力してください</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <p id="result<%= question.id %>"></p>
+        </div>
+
+    <button id="button<%= question.id %>">次の問題へ</button>
+
+    </div>
+
+    <% if i == 0 %>
+        <script>
+            $(function() {
+                $("#classification<%= question.id %>").show();
+            });
+        </script>
+    <% elsif @questions.length - 1 == i %>
+
+        <script>
+            $(document).ready(function(){
+                $("#classification<%= question.id %>").hide();
+            });
+
+            $("#button<%= question.id %>").text("問題は以上です。正解率を確認してください（ここをクリック）");
+
+            $("#button<%= question.id %>").on("click", function(){
+                var ans = $('p.ans').length;
+                var good = $('p.good').length;
+                alert("あなたの正解数は" + good + "/" + ans + "(" + good/ans*100 + "%)" + "です")
+            });
+
+        </script>
+
+    <% else %>
+        <script>
+            $(document).ready(function(){
+                $("#classification<%= question.id %>").hide();
+            });
+        </script>
+    <% end %>
+
+    <script>
+
+        $('#area<%= question.id %>').change(function() {
+            var r = $('[name=area<%= question.id %>] option:selected').val();
+                if (<%= question.answer %> == r) {
+                    $('#result<%= question.id %>').append('<p class="ans good">大正解！！！！！</p>').css({'color':'red','font-size':'50px'});
+                } else {
+                    $('#result<%= question.id %>').append('<p class="ans not">不正解</p>').css({'color':'blue','font-size':'50px'});
+                }
+            $("#classification<%= question.id %>").next().next().next().show();
+        })
+
+    </script>
+
+<% end %>
