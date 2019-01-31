@@ -1,7 +1,7 @@
 <% @questions.each do |question| %>
     <p>---------------------------------</p>
     <p>id:<%= question.id %></p>
-    <p>質問内容画像:<%= image_tag question.question_image.url %></p>
+    <%= image_tag(question.question_image.url, :size => "446x75") %>
     <p>答え（数字）:<%= question.answer %></p>
     <p>コラム:<%= question.column %></p>
     <p>ヒント:<%= question.hint %></p>

@@ -2,7 +2,7 @@
 <% @questions.each_with_index do |question, i| %>
     <div id = "classification<%= question.id %>">
         <p>-----<%= i + 1%>問目-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-        <p><%= image_tag(question.question_image.url, :size => "600x400") %></p>
+        <p><%= image_tag(question.question_image.url, :size => "446x75") %></p>
         <p>コラム:<%= question.column %></p>
         <p>ヒント:<%= question.hint %></p>
         <p>レベル:<%= question.level %></p>
